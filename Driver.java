@@ -49,6 +49,7 @@ class Driver
 			else if (i == 2)
 			{
 				//print the stack
+				printStack();
 			}
 			else if (i == 3)
 			{
@@ -56,8 +57,11 @@ class Driver
 				System.out.println("Exiting Program... Goodbye!");
 				keepGoing = 1;
 			}
+			
 		}
+		
 	}
+	
 	
 	//--load text file method--//
 	private void loadTxt()
@@ -120,6 +124,7 @@ class Driver
 		System.out.println("");
 	}
 	
+	
 	//--Print Stack Method--//
 	private void printStack()
 	{
@@ -138,4 +143,5 @@ class Driver
 		System.out.println("All student information printed!");
 		System.out.println("");
 	}
+	
 }
