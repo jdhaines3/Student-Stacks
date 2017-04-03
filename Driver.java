@@ -17,7 +17,7 @@ import java.util.Scanner;
 class Driver
 {
 	//call instance of stack we will be using
-	Stack<Student> mainStack = new Stack<Student>(10);
+	private Stack<Student> mainStack = new Stack<Student>(10);
 	
 	//--Main--//
 	public static void main(String[] args)
@@ -44,6 +44,7 @@ class Driver
 			if (i == 1)
 			{
 				//load students onto stack
+				loadTxt();
 			}
 			else if (i == 2)
 			{
@@ -59,7 +60,7 @@ class Driver
 	}
 	
 	//--load text file method--//
-	void loadTxt
+	private void loadTxt()
 	{
 		//set up input stream
 		try 
@@ -98,19 +99,43 @@ class Driver
 				Student stu = new Student(name1, name2, gpa, id, adr);
 				
 				//pop onto stack
-				
+				mainStack.push(stu);
 				
 				// Get the next line in the file...
 				line = br.readLine();
 			}
 			
-			buffer.close();
+			//close buffer reader
+			br.close();
 		}
+		//if the file isn't there, print an error
 		catch (IOException ex) 
 		{
 			System.err.println(ex);
 		}
-	//possibly do loading students and printing stack in seperate methods/functions and just call in main
-}
-			
 		
+		//print out message that student file is loaded, put empty line above and below
+		System.out.println("");
+		System.out.println("Loaded student list from file!");
+		System.out.println("");
+	}
+	
+	//--Print Stack Method--//
+	private void printStack()
+	{
+		//loop through stack, popping off top element (student) then calling the student's print function
+		while (!mainStack.isEmpty())
+		{
+			//pop top object and set to variable
+			obj = mainStack.pop();
+			
+			//since that variable
+			obj.printInfo();
+		}
+		
+		//print out message that printing is complete
+		System.out.println("");
+		System.out.println("All student information printed!");
+		System.out.println("");
+	}
+}

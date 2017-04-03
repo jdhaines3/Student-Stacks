@@ -9,9 +9,8 @@
 public class Address
 {
 	
-	//list all private attributes
-	private String addrLine1, addrLine2, city, state;
-	private int zip;
+	//list all private attributes--everything will be string from csv
+	private String addrLine1, addrLine2, city, state, zip;
 	
 	//--Default Constructor--//
 	public Address()
@@ -21,12 +20,12 @@ public class Address
 		this.addrLine2 = "";
 		this.city = "";
 		this.state = "";
-		this.zip = 0;
+		this.zip = "";
 	}
 	
 	//--Constructor for CSV input--//
 	//when reading from CSV, need each line in constructor, even if the student doesn't have addr line 2
-	public Address(String a1, String a2, String c, String s, int z)
+	public Address(String a1, String a2, String c, String s, String z)
 	{
 		this.addrLine1 = a1;
 		this.addrLine2 = a2;

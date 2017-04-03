@@ -3,6 +3,7 @@
 * A4, Student Class
 * David Haines */
 
+//import for formatted printing
 import java.io.PrintStream;
 
 ///---Student Class---///
@@ -39,7 +40,7 @@ public class Student
 	//set getters and setters for future use
 	
 	//was going to put this in the Driver, but realized I can write it here
-	void printInfo
+	void printInfo()
 	{
 		/*use printstream to format output
 		*width formatted to look like table*/
