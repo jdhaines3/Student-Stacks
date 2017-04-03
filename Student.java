@@ -43,8 +43,10 @@ public class Student
 	void printInfo()
 	{
 		/*use printstream to format output
-		*width formatted to look like table*/
-		System.out.printf("ID: %6s /t Name: %10s %10s /t Address: %25s %7s; %15s, %2s, %5s /t GPA: %5s/n", 
+		*width formatted to look like table
+		
+		might need - in front of width number to be left justified?*/
+		System.out.printf("ID: %-6s Name: %-10s %-10s Address: %-25s %-7s; %-15s, %-2s, %-5s GPA: %-5s\n", 
 			id, firstName, lastName, addr.addrLine1, addr.addrLine2, addr.city, addr.state, addr.zip, gpa);
 	}
 }

@@ -1,6 +1,6 @@
 /* Honor Pledge: I pledge that I have neither 
 * given nor receieved any help on this assignment.
-* A4, Student Class
+* A4, Driver Class
 * David Haines */
 
 //import java io for file input readers, exceptions, and possible formatted output (might just use system.out)
@@ -78,6 +78,8 @@ class Driver
 			
 			//burn first line of file (header)
 			String line = br.readLine();
+			
+			line = br.readLine();
 			
 			//loop through other lines in file
 			while(line != null)
