@@ -10,7 +10,8 @@ public class Address
 {
 	
 	//list all private attributes--everything will be string from csv
-	private String addrLine1, addrLine2, city, state, zip;
+	//update: to use these variables in student, i think they need to be public
+	public String addrLine1, addrLine2, city, state, zip;
 	
 	//--Default Constructor--//
 	public Address()

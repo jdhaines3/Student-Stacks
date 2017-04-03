@@ -132,10 +132,10 @@ class Driver
 		while (!mainStack.isEmpty())
 		{
 			//pop top object and set to variable
-			obj = mainStack.pop();
+			Student stu = mainStack.pop();
 			
 			//since that variable
-			obj.printInfo();
+			stu.printInfo();
 		}
 		
 		//print out message that printing is complete
