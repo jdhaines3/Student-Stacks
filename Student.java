@@ -10,7 +10,7 @@ import java.io.PrintStream;
 public class Student
 {
 	// add student variables, everything will be string since it is read from csv
-	private String fristName, lastName, gpa, id;
+	private String firstName, lastName, gpa, id;
 	private Address addr;
 	
 	//--Default Constructor, added for good habit making--//
