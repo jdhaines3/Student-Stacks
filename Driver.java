@@ -64,7 +64,7 @@ class Driver
 	
 	
 	//--load text file method--//
-	private void loadTxt()
+	private static void loadTxt()
 	{
 		//set up input stream
 		try 
@@ -126,7 +126,7 @@ class Driver
 	
 	
 	//--Print Stack Method--//
-	private void printStack()
+	private static void printStack()
 	{
 		//loop through stack, popping off top element (student) then calling the student's print function
 		while (!mainStack.isEmpty())
