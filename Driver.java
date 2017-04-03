@@ -17,7 +17,7 @@ import java.util.Scanner;
 class Driver
 {
 	//call instance of stack we will be using
-	private Stack<Student> mainStack = new Stack<Student>(10);
+	private static Stack<Student> mainStack = new Stack<Student>(10);
 	
 	//--Main--//
 	public static void main(String[] args)
