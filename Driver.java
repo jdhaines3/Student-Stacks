@@ -58,6 +58,58 @@ class Driver
 		}
 	}
 	
+	//--load text file method--//
+	void loadTxt
+	{
+		//set up input stream
+		try 
+		{
+			//input stream for text file, input stream reader then buffer reader
+			InputStream inpStrm = new FileInputStream("students.txt");
+			
+			InputStreamReader isr = new InputStreamReader(inpStrm);
+			
+			BufferedReader br = new BufferedReader(isr);
+			
+			//burn first line of file (header)
+			String line = br.readLine();
+			
+			//loop through other lines in file
+			while(line != null)
+			{
+				//split line by comma and put each string into an array
+				String[] values = line.split(",");
+				
+				//classify which string in the array is what (ie: first name, ID, etc)
+				//Student variables
+				String name1 = values[1];
+				String name2 = values[0];
+				String id = values[7];
+				String gpa = values[8];
+				//Address variables
+				String addrLn1 = values[2];
+				String addrLn2 = values[3];
+				String city = values[4];
+				String state = values[5];
+				String zip = values[6];
+				
+				//create new address instance
+				Address adr = new Address(addrLn1, addrLn2, city, state, zip);
+				Student stu = new Student(name1, name2, gpa, id, adr);
+				
+				//pop onto stack
+				
+				
+				// Get the next line in the file...
+				line = br.readLine();
+			}
+			
+			buffer.close();
+		}
+		catch (IOException ex) 
+		{
+			System.err.println(ex);
+		}
 	//possibly do loading students and printing stack in seperate methods/functions and just call in main
 }
 			
