@@ -46,8 +46,29 @@ public class Student
 		*width formatted to look like table
 		
 		might need - in front of width number to be left justified?*/
-		System.out.printf("ID: %-6s Name: %-10s %-10s Address: %-25s %-7s; %-15s, %-2s, %-5s GPA: %-5s\n", 
-			id, firstName, lastName, addr.addrLine1, addr.addrLine2, addr.city, addr.state, addr.zip, gpa);
+		
+		//if no address line 2 skip it
+		if (addr.addrLine2.equals(""))
+		{
+			//make new variables to combine name and address for better formatting
+			String name = firstName + " " + lastName;
+			String adrStr = addr.addrLine1 + " " + addr.city + ", " + addr.state + ", " + addr.zip;
+			
+			//print new variables left aligned with determined width
+			System.out.printf("ID: %-6s \tName: %-20s \tAddress: %-55s \tGPA: %-5s\n", id, name, adrStr, gpa);
+		}
+		else
+		{
+			//create same variables as above, except with addrLine2
+			String name = firstName + " " + lastName;
+			String adrStr = addr.addrLine1 + " " + addr.addrLine2 + " " + addr.city + ", " + addr.state + ", " + addr.zip;
+			
+			//same print statement
+			System.out.printf("ID: %-6s \tName: %-20s \tAddress: %-55s \tGPA: %-5s\n", id, name, adrStr, gpa);
+			
+			
+			//System.out.printf("ID: %-6s Name: %-10s %-10s Address: %-25s %-7s; %-15s, %-2s, %-5s GPA: %-5s\n", 
+			//id, firstName, lastName, addr.addrLine1, addr.addrLine2, addr.city, addr.state, addr.zip, gpa);
 	}
 }
 		
