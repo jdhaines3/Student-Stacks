@@ -3,25 +3,25 @@ ALGORITHM FOR ASSIGNMENT 4
 David Haines
 
 Goal:  Create a menu driven program that can load student information from a text file, store it in the stack,
-print the stack with each subject on a different line, then exit. Each step will be user controlled.
+print the stack with each Student on a different line, then exit. Each step will be user controlled.
 
 The program will consist of four classes:
 	1) Driver class: basically a main class to load in the text file and run the stack operations
 	2) Stack class: a written ADT stack class to accept all data types. 
-	3) Subject class: a class containing first and last name, address, student ID, and GPA
+	3) Student class: a class containing first and last name, address, student ID, and GPA
 	4) Address class: a class containing address line 1 and 2, city, state, and zip code
-		-Subject and address share an aggregation relationship in which a student has an address
+		-Student and address share an aggregation relationship in which a student has an address
 		
 The driver class will present a menu that runs in a while loop until 3 is pressed. 
-	-if 1, load the subjects
+	-if 1, load the Students
 	-if 2, print the stack 
 	-if 3 exit program by exiting loop
 	
-	- it will also create a new instance of the stack, in which 10 subjects are allowed at once
+	- it will also create a new instance of the stack, in which 10 Students are allowed at once
 	
-	Loading subjects:		
+	Loading Students:		
 		-the program will load in the "students.txt" with file input stream, input stream reader, and buffered reader
-		-the buffered reader will read off the first line and set it to string headerline
+		-the buffered reader will read off the first line and set it to string headerline; call buffered reader again
 			-this will ignore the header when setting data to new instances
 		
 		-the buf reader will then do a while loop iterating through the rest of the lines in the txt file until there is a null line
@@ -36,10 +36,10 @@ The driver class will present a menu that runs in a while loop until 3 is presse
 					
 				-create an instance of Address using the address variables from the string array in the constructor
 				
-				-next create an instance of Subject using the name, ID, and GPA variables, as well as the instance of Address
+				-next create an instance of Student using the name, ID, and GPA variables, as well as the instance of Address
 					-this is aggregation
 				
-				-push the subject onto the stack, and repeat
+				-push the Student onto the stack, and repeat
 				
 				-close file reader
 	
@@ -47,17 +47,20 @@ The driver class will present a menu that runs in a while loop until 3 is presse
 		-for or while loop to loop through popping off each stack member and printing them
 			-pop the most recent entry off of the top of the stack
 		
-			-use that reference to obtain the subject's info; set obj to stack.pop
+			-use that reference to obtain the Student's info; set obj to stack.pop
 		
-			-print the subject's information neatly using it's member variable getters
+			-print the Student's information neatly using it's member variable getters
+				-after note: just created print info variable in Student class
+				-formatting done in student class to appear like a table
 			
-			-go to next subject
+			-go to next Student
 			
 	Exiting:
 		-exit variable for while loop to end for menu, then print a closing remark.
 		
 Notes:
 	Address constructor will use (Address Line 1, Address Line 2, City, State, Zip)
-	Subject constructor will use (First Name, Last Name, ID, GPA, Address addr)
+	Student constructor will use (First Name, Last Name, ID, GPA, Address addr)
+		-after note: address vars must be public to pass to Student
 	
 				

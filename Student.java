@@ -26,6 +26,7 @@ public class Student
 	}
 	
 	//--CSV Constructor--//
+	//load in Address in constructor
 	public Student(String fn, String ln, String g, String i, Address ad)
 	{
 		//set variables 
@@ -37,7 +38,7 @@ public class Student
 	}
 	//will have to create instance of Address first when reading csv, then call new instance of Student
 	
-	//set getters and setters for future use
+	//create getters and setters for future use
 	
 	//was going to put this in the Driver, but realized I can write it here
 	void printInfo()
@@ -66,12 +67,10 @@ public class Student
 			//same print statement
 			System.out.printf("ID: %-6s \tName: %-20s \tAddress: %-55s \tGPA: %-5s\n", id, name, adrStr, gpa);
 			
-			
+		}	
 			//System.out.printf("ID: %-6s Name: %-10s %-10s Address: %-25s %-7s; %-15s, %-2s, %-5s GPA: %-5s\n", 
 			//id, firstName, lastName, addr.addrLine1, addr.addrLine2, addr.city, addr.state, addr.zip, gpa);
 	}
-}
-		
-		
+}	
 	
 	
